@@ -3,11 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>30 day with me</title>
+        <!-- <title>30 day with me</title> -->
+        <title> day 1</title>
+        <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
-        <div>hello ae</div>
-        <script src="index.js">
-    </script>
+        <div class="clock">
+            <div class="hand hand-hour"></div>
+            <div class="hand hand-minute"></div>
+            <div class="hand hand-second"></div>
+        </div>
+        <script>
+            let handHours= document.querySelector('.hand-hour');
+            let handMinute= document.querySelector('.hand-minute');
+            let handSecond=document.querySelector('.hand-second');
+            console.log(handSecond);
+            
+            ///
+            let setDate = () => {
+                const now = new Date();
+    
+                const hours = now.getHours();
+                const hoursDegrees = ((hours / 60)*360) +90;
+                handHours.style.transform = `rotate(${hoursDegrees}deg)`;
+
+                const minutes = now.getMinutes();
+                const minutesDegrees =((minutes/ 60)*360) + 90;
+                handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
+
+                const seconds = now.getSeconds();
+                const secondsDegrees =((seconds/60)*360)+90;
+                
+                handSecond.style.transform=`rotate(${secondsDegrees}deg)`;   
+            };
+            setInterval(setDate, 1000);
+        </script>
     </body>
 </html>
