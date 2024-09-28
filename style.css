@@ -32,9 +32,12 @@ body {
 .hand-hour{
     height: 4px;
     background-color: #000;
+    border-radius: 50%;
 }
 .hand-minute{
     height: 8px;
+    border-radius: 50%;
+
 }
 .hand-second{
     height: 2px;

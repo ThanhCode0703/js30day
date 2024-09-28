@@ -14,27 +14,25 @@
             <div class="hand hand-second"></div>
         </div>
         <script>
-            let handHours= document.querySelector('.hand-hour');
-            let handMinute= document.querySelector('.hand-minute');
-            let handSecond=document.querySelector('.hand-second');
-            console.log(handSecond);
+           const hourHand = document.querySelector('.hand-hour');
+const minuteHand = document.querySelector('.hand-minute');
+const secondHand = document.querySelector('.hand-second');
             
             ///
             let setDate = () => {
-                const now = new Date();
-    
-                const hours = now.getHours();
-                const hoursDegrees = ((hours / 60)*360) +90;
-                handHours.style.transform = `rotate(${hoursDegrees}deg)`;
+              const now = new Date();
 
-                const minutes = now.getMinutes();
-                const minutesDegrees =((minutes/ 60)*360) + 90;
-                handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
+    const seconds = now.getSeconds();
+    const minutes = now.getMinutes();
+    const hours = now.getHours();
 
-                const seconds = now.getSeconds();
-                const secondsDegrees =((seconds/60)*360)+90;
-                
-                handSecond.style.transform=`rotate(${secondsDegrees}deg)`;   
+    const secondsDegree = ((seconds / 60) * 360) + 90;
+    const minutesDegree = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+    const hoursDegree = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30) + 90;
+
+    secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+    minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
+    hourHand.style.transform = `rotate(${hoursDegree}deg)`; 
             };
             setInterval(setDate, 1000);
         </script>
