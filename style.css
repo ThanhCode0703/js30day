@@ -5,18 +5,29 @@
 
 
 body {
-    background-color: #521751;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgb(13, 186, 230);
 }
 .clock{
     width: 20rem;
     height: 20rem;
-    background-color: #fff;
     border-radius: 50%;
     position: relative;
+    background-image: url(clock.jpg);
+    background-size: cover;
+}
+.dot{
+    width: 6px;
+    height: 6px;
+    background-color:#848484;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .hand{
     width: 50%;
@@ -33,17 +44,20 @@ body {
     height: 5px;
     background-color: #000;
     border-radius: 50%;
-    width: 35%;
-    left: 15%;
+    width: 25%;
+    left: 25%;
     
 }
 .hand-minute{
     height: 3px;
     border-radius: 50%;
-    width: 50%;
+    width: 30%;
+    left: 20%;
+
 }
 .hand-second{
     height: 2px;
     background-color: red;
-    width: 50%;
+    width: 30%;
+    left: 20%;
 }
