@@ -30,16 +30,20 @@ body {
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 .hand-hour{
-    height: 4px;
+    height: 5px;
     background-color: #000;
     border-radius: 50%;
+    width: 35%;
+    left: 15%;
+    
 }
 .hand-minute{
-    height: 8px;
+    height: 3px;
     border-radius: 50%;
-
+    width: 50%;
 }
 .hand-second{
     height: 2px;
     background-color: red;
+    width: 50%;
 }
